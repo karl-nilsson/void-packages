@@ -1,7 +1,7 @@
 # Template file for 'occt'
 pkgname=occt
-_gittag="V7_2_0p1"
-version=7.2.0p1
+_gittag="V7_3_0"
+version=7.3.0
 revision=1
 wrksrc=occt-${_gittag}
 build_style=cmake
@@ -11,10 +11,10 @@ makedepends="freetype-devel glu-devel freeimage-devel gl2ps-devel tbb-devel
  tcl-devel tk-devel"
 short_desc="OpenCASCADE Technology - library for CAD/CAM/CAE applications"
 maintainer="Piraty <piraty1@inbox.ru>"
-license="LGPL-2.1"
+license="LGPL-2.1-only"
 homepage="https://www.opencascade.com"
 distfiles="https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/${_gittag};sf=tgz>occt-${_gittag}.tar.gz"
-checksum=530f9981e6026e6cc04c462ab039b4977a568f943d6086dc502262d100a07a79
+checksum=7298c5eadc6dd0aeb6265ff2958e8e742d6e3aa65227acce8094f96f1bf6d2ac
 conflicts="oce>=0"
 
 post_install() {
