@@ -3,8 +3,8 @@
 # vtk can be huge, especially with -DVTK_BUILD_ALL_MODULES=ON" or qt5
 # Here only the bare minimum set of modules for freecad is enabled
 pkgname=vtk
-version=8.1.0
-revision=5
+version=8.1.1
+revision=1
 wrksrc=VTK-${version}
 build_style=cmake
 configure_args="-DBUILD_SHARED_LIBS=ON -DVTK_USE_SYSTEM_LIBRARIES=ON
@@ -35,7 +35,7 @@ maintainer="Piraty <piraty1@inbox.ru>"
 license="BSD-3-Clause"
 homepage="https://www.vtk.org"
 distfiles="https://www.vtk.org/files/release/${version:0:3}/VTK-${version}.tar.gz"
-checksum=6e269f07b64fb13774f5925161fb4e1f379f4e6a0131c8408c555f6b58ef3cb7
+checksum=71a09b4340f0a9c58559fe946dc745ab68a866cf20636a41d97b6046cb736324
 
 nocross="hdf5 is nocross"
 
