@@ -1,8 +1,8 @@
 # Template file for 'occt'
 pkgname=occt
-_gittag="V7_3_0"
 version=7.3.0
 revision=1
+_gittag="V${version//./_}"
 wrksrc=occt-${_gittag}
 build_style=cmake
 configure_args="-DUSE_FREEIMAGE=ON -DUSE_TBB=ON -DUSE_GL2PS=ON -DUSE_VTK=OFF
@@ -11,13 +11,15 @@ makedepends="freetype-devel glu-devel freeimage-devel gl2ps-devel tbb-devel
  tcl-devel tk-devel"
 short_desc="OpenCASCADE Technology - library for CAD/CAM/CAE applications"
 maintainer="Piraty <piraty1@inbox.ru>"
-license="LGPL-2.1-only"
+license="LGPL-2.1-only,OpenCascade-1.0-LGPL-exception-not-SPDX"
 homepage="https://www.opencascade.com"
 distfiles="https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/${_gittag};sf=tgz>occt-${_gittag}.tar.gz"
 checksum=7298c5eadc6dd0aeb6265ff2958e8e742d6e3aa65227acce8094f96f1bf6d2ac
 conflicts="oce>=0"
 
 post_install() {
+	# license files: wrong place
+	rm ${PKGDESTDIR}/usr/share/doc/opencascade/*_LGPL_*.txt
 	vlicense OCCT_LGPL_EXCEPTION.txt
 	rm ${DESTDIR}/usr/bin/custom*.sh
 }
