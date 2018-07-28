@@ -4,19 +4,22 @@
 # Here only the bare minimum set of modules for freecad is enabled
 pkgname=vtk
 version=8.1.0
-revision=4
+revision=5
 wrksrc=VTK-${version}
 build_style=cmake
 configure_args="-DBUILD_SHARED_LIBS=ON -DVTK_USE_SYSTEM_LIBRARIES=ON
--DVTK_Group_StandAlone=ON
--DModule_vtkIOMPIParallel=ON
--DModule_vtkParallelMPI=ON"
+ -DVTK_FORBID_DOWNLOADS=ON
+ -DVTK_Group_StandAlone=ON
+ -DModule_vtkIOMPIParallel=ON
+ -DModule_vtkParallelMPI=ON"
 
 # vtk needs specific libharu patches, so use built-in.
 # https://github.com/libharu/libharu/pull/157
 configure_args+=" -DVTK_USE_SYSTEM_LIBHARU=OFF"
 
 # fails, so use built-in
+# netcdf's XBPS package lacks of c++ interface ?
+# ArchLinux: "VTK fails to compile with recent netcdf-cxx package, VTK should be ported to the latest API"
 configure_args+=" -DVTK_USE_SYSTEM_NETCDFCPP=OFF"
 
 # may be disabled when gl2ps > 1.4.0 is available
@@ -24,18 +27,20 @@ configure_args+=" -DVTK_USE_SYSTEM_NETCDFCPP=OFF"
 configure_args+=" -DVTK_USE_SYSTEM_GL2PS=OFF"
 
 makedepends="zlib-devel freetype-devel liblz4-devel expat-devel MesaLib-devel
-libXt-devel libjpeg-turbo-devel tiff-devel proj-devel hdf5-devel netcdf-devel
-gl2ps-devel libxml2-devel jsoncpp-devel openmpi-devel libogg-devel
-libtheora-devel"
+ libXt-devel libjpeg-turbo-devel tiff-devel proj-devel hdf5-devel netcdf-devel
+ libxml2-devel jsoncpp-devel openmpi-devel libogg-devel libtheora-devel"
 
 short_desc="System for 3D computer graphics, image processing, and visualization"
 maintainer="Piraty <piraty1@inbox.ru>"
-license="3-clause-BSD"
+license="BSD-3-Clause"
 homepage="https://www.vtk.org"
 distfiles="https://www.vtk.org/files/release/${version:0:3}/VTK-${version}.tar.gz"
 checksum=6e269f07b64fb13774f5925161fb4e1f379f4e6a0131c8408c555f6b58ef3cb7
 
+nocross="hdf5 is nocross"
+
 post_install() {
+	rm ${PKGDESTDIR}/usr/share/doc/${pkgname}-*/Copyright.txt
 	vlicense Copyright.txt
 }
 
