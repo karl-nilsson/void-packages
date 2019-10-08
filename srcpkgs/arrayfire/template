@@ -1,0 +1,18 @@
+# Template file for 'arrayfire'
+pkgname=arrayfire
+version=3.7.1
+revision=1
+build_style=cmake
+hostmakedepends=""
+makedepends="glfw-devel fontconfig-devel forge-devel"
+depends="glm"
+short_desc="Genera-purpose parallel math library"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://github.com/arrayfire/arrayfire"
+distfiles="https://github.com/arrayfire/arrayfire/archive/v${version}.tar.gz"
+checksum=918a6ea3fd22b3d727d6c797e583a3182b033dfe4f106618199ab22dbc008bee
+
+post_install() {
+	vlicense LICENSE
+}
