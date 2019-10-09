@@ -1,0 +1,29 @@
+# Template file for 'forge'
+pkgname=forge
+version=1.0.5
+revision=1
+build_style=cmake
+configure_args="-DFG_BUILD_EXAMPLES=OFF -DFG_INSTALL_CMAKE_DIR=/usr/lib/cmake/Forge"
+makedepends="glfw-devel freetype-devel fontconfig-devel freeimage-devel boost-devel glm"
+depends=""
+short_desc="High performance visualization"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://github.com/arrayfire/forge"
+distfiles="https://github.com/arrayfire/forge/archive/v${version}.tar.gz"
+checksum=4ed631cfde6a9c0daf786d68b47719edec024928b3e23dbfb2e786e60ab01097
+
+post_install() {
+	vlicense .github/LICENSE
+}
+
+forge-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_dest+=" - development files"
+
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/cmake
+		vmove "usr/lib/*.so"
+	}
+}
