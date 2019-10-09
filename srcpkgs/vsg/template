@@ -1,0 +1,40 @@
+# Template file for 'vsg'
+pkgname=vsg
+version=1.0
+revision=1
+wrksrc=VulkanSceneGraph-master
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+make_build_target="all docs"
+hostmakedepends="doxygen graphviz pkg-config"
+makedepends="Vulkan-Headers vulkan-loader libxcb-devel"
+short_desc="Vulkan based Scene Graph"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="MIT"
+homepage="http://www.vulkanscenegraph.org/"
+#distfiles="https://github.com/vsg-dev/VulkanSceneGraph/archive/${version}.tar.gz"
+distfiles="https://github.com/vsg-dev/VulkanSceneGraph/archive/master.zip"
+checksum=aec2875187d86ccbd6eb6e50af187e48e1f697d61ae5a6119fafd3aa5d7f4dd5
+
+post_install() {
+	vlicense LICENSE.md
+}
+
+vsg-devel_package() {
+	short_desc+=" - development files"
+	depends="${makedepends} ${sourcepkg}>=${version}_${revision}"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove "usr/lib/cmake"
+	}
+}
+
+# FIXME: docs currently built to $wrksrc/build/html/, but aren't installed
+vsg-doc_package() {
+	short_desc+=" - documentation"
+	depends="${makedepends} ${sourcepkg}>=${version}_${revision}"
+	pkg_install() {
+		vmove usr/share/doc
+	}
+}
