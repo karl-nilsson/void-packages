@@ -1,0 +1,26 @@
+# Template file for 'openmvg'
+pkgname=openmvg
+version=1.5
+revision=1
+build_style=cmake
+wrksrc="openMVG-${version}/src"
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="git"
+makedepends="libpng-devel libjpeg-turbo-devel tiff-devel libXxf86vm-devel libXi-devel libXrandr-devel"
+depends=""
+short_desc="Open Multiple View Geometry library"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="MPL-2.0"
+homepage="http://imagine.enpc.fr/~moulonp/openMVG/"
+distfiles="https://github.com/openMVG/openMVG/archive/v${version}.tar.gz"
+checksum=4f89edb0d4568aeb817fcbd3c761e8bfc92c1597b97c4b5482cfe9989f40ab97
+
+post_extract() {
+    cd ${wrksrc}/dependencies
+    pwd
+    git submodule update --init --recursive
+}
