@@ -1,0 +1,15 @@
+# Template file for 'mayo'
+pkgname=mayo
+version=0.2.0
+revision=1
+build_style=qmake
+configure_args="CASCADE_INC_DIR=/usr/include/opencascade/ CASCADE_LIB_DIR=/usr/lib/ GMIO_ROOT=/usr/"
+hostmakedepends="qt5-qmake qt5-host-tools"
+makedepends="qt5-devel qt5-widgets occt-devel gmio-devel"
+depends="occt gmio qt5-widgets qt5-gui qt5-core"
+short_desc="3D viewer"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="BSD-2-Clause"
+homepage="https://github.com/fougue/mayo"
+distfiles="https://github.com/fougue/mayo/archive/v${version}.tar.gz"
+checksum=14df56168660e6f345dba91a3ec56ae012a68002ee75e69417c338fbff45ecf3
