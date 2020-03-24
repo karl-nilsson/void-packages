@@ -1,0 +1,14 @@
+# Template file for 'evtest-qt'
+pkgname=evtest-qt
+version=0.2.0
+revision=1
+build_style=cmake
+hostmakedepends=""
+makedepends=""
+depends=""
+short_desc="Joystick tester for Qt"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/Grumbel/evtest-qt"
+distfiles="https://github.com/Grumbel/evtest-qt/archive/v${version}.tar.gz"
+checksum=badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadb
