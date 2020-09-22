@@ -1,0 +1,25 @@
+# Template file for 'libfive'
+pkgname=libfive
+version=0.0.0
+revision=1
+#wrksrc=
+build_style=cmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="pkg-config"
+makedepends="eigen libpng-devel boost-devel qt5-devel guile2.2-devel libatomic-devel"
+depends=""
+short_desc="Infrastructure for solid modeling"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="MPL-2.0"
+homepage="https://libfive.com/"
+distfiles="https://github.com/libfive/libfive/archive/rip-dmc.tar.gz"
+#distfiles="https://github.com/libfive/libfive/archive/${version}.tar.gz"
+checksum=badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadb
+
+post_install() {
+    vlicense LICENSE
+}
