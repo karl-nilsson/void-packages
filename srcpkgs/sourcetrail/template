@@ -1,0 +1,18 @@
+# Template file for 'sourcetrail'
+pkgname=sourcetrail
+version=2020.2.43
+revision=1
+#archs="i686 x86_64"
+wrksrc=Sourcetrail-${version}
+#create_wrksrc=yes
+build_style=cmake
+configure_args="-DBUILD_CXX_LANGUAGE_PACKAGE=ON"
+hostmakedepends="git"
+makedepends="clang llvm10 clang-tools-extra boost-devel qt5-devel qt5-svg-devel python3-devel ncurses-devel"
+depends=""
+short_desc="Interactive source explorer"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://www.sourcetrail.com/"
+distfiles="https://github.com/CoatiSoftware/Sourcetrail/archive/${version}.tar.gz"
+checksum=19bf4524fd53cb8918079a12c74d2a8261efdb9a71064dedaeb9254072fe9b92
