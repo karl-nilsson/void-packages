@@ -1,0 +1,19 @@
+# Template file for 'brl-cad'
+pkgname=brlcad
+version=7.32.0
+revision=1
+build_style=cmake
+configure_args="-DBRLCAD_ENABLE_STRICT=OFF"
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="sed byacc flex libxslt-devel ncurses-devel fontconfig-devel xorg-server-devel libX11-devel libXi-devel"
+depends=""
+short_desc="Open Source solid modeling CAD"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="LGPL-2.1-or-later"
+homepage="https://brlcad.org/"
+distfiles="${SOURCEFORGE_SITE}/brlcad/BRL-CAD%20Source/${version}/brlcad-${version}.tar.gz"
+checksum=1d08029b7e1847a3a9f0d119c631c15b2c3f388a736f2d13f8d8a7bc3449f828
