@@ -1,6 +1,6 @@
 # Template file for 'xpadneo-dkms'
 pkgname=xpadneo-dkms
-version=0.8.3
+version=0.9
 revision=1
 wrksrc=xpadneo-${version}
 depends="dkms bluez"
@@ -9,7 +9,7 @@ maintainer="Cameron Katri <katri.cameron@gmail.com>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/atar-axis/xpadneo"
 distfiles="https://github.com/atar-axis/xpadneo/archive/v${version}.tar.gz"
-checksum=88ffd67b42038d144106e673e29cb1ce18df2aad4d1dad471865ebac860230e9
+checksum=54ce4cddae2f1bba0571fb8a30194bf94cac65ba18fae71ccd7a592952493b41
 dkms_modules="hid-xpadneo ${version}"
 
 pre_configure() {
