@@ -1,0 +1,22 @@
+# Template file for 'analysis-situs'
+pkgname=analysis-situs
+version=1.0.0
+revision=1
+#archs="i686 x86_64"
+#wrksrc=
+#create_wrksrc=yes
+build_style=cmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="occt-devel eigen vtk-devel qt5-devel qt5-x11extras-devel qt5-tools libXt-devel libXi-devel libXmu-devel fontconfig-devel active-data-devel tbb-devel"
+depends=""
+short_desc="Open-source CAD platform"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="3-clause-BSD"
+homepage="http://analysissitus.org/"
+distfiles="https://gitlab.com/ssv/AnalysisSitus/-/archive/v${version}/AnalysisSitus-v${version}.tar.gz"
+checksum=3b1bf3c4c18c6a3247d36352def7db8c0a822c6ed012044ebcd47234dbcae7ba
