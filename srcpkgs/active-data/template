@@ -1,0 +1,22 @@
+# Template file for 'active-data'
+pkgname=active-data
+version=0.0
+revision=1
+#archs="i686 x86_64"
+#wrksrc=
+#create_wrksrc=yes
+build_style=cmake
+configure_args="-DActiveData_USE_TBB=ON"
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="tbb-devel"
+depends=""
+short_desc="FIXME"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="BSD-3-Clause"
+homepage="https://gitlab.com/ssv/active-data"
+distfiles=""
+checksum=badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadb
