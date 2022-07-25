@@ -1,6 +1,6 @@
 # Template file for 'python3-utils'
 pkgname=python3-utils
-version=3.1.0
+version=3.3.3
 revision=1
 wrksrc="python-utils-${version}"
 build_style=python3-module
@@ -13,7 +13,7 @@ maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
 license="BSD-3-Clause"
 homepage="https://github.com/WoLpH/python-utils"
 distfiles="https://github.com/WoLpH/python-utils/archive/v${version}.tar.gz"
-checksum=6f20e784af79dd0f2c330c88496b3d08fa29e27bcfba398ba78f73d8ae85f670
+checksum=aae5bbe0737dadb8ac73bc631a59d4c822a1c52296dbff1ad255d54119b178b0
 
 post_install() {
 	vlicense LICENSE
