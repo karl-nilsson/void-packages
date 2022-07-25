@@ -5,7 +5,8 @@ revision=1
 wrksrc="python-utils-${version}"
 build_style=python3-module
 # skip coverage and mypy tests https://github.com/WoLpH/python-utils/issues/29
-make_check_args="-o addopts=--doctest-modules"
+# BLAH
+make_check_args="-o addopts=--ignore=python_utils/loguru.py,_python_utils_tests/test_logger.py"
 hostmakedepends="python3-setuptools"
 checkdepends="python3-pytest python3-pytest-asyncio"
 short_desc="Convenient utilities not included with the standard Python3 install"
