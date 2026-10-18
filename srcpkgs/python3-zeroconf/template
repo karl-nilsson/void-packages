@@ -1,9 +1,9 @@
 # Template file for 'python3-zeroconf'
 pkgname=python3-zeroconf
-version=0.39.1
-revision=5
-build_style=python3-module
-hostmakedepends="python3-setuptools"
+version=0.151.5
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-poetry-core python3-Cython python3-devel"
 depends="python3-ifaddr python3-async-timeout"
 checkdepends="python3-pytest python3-pytest-cov python3-mypy
  python3-pytest-asyncio $depends"
@@ -12,7 +12,7 @@ maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
 license="LGPL-2.1-or-later"
 homepage="https://github.com/jstasiak/python-zeroconf"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=c1e1f1720f48833a9c6410c3f400ef18aaf6957b8a54fb3ef131c4e18c9fd914
+checksum=c3107783496e9bb46ff8ffb7082300afcaca2b4dcabe1d491fb19e733673c00c
 
 do_check() {
 	# IPv6 doesn't work on github CI
