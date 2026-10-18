@@ -1,0 +1,21 @@
+# Template file for 'tpack'
+pkgname=tpack
+version=2.0.6
+revision=1
+build_style=go
+go_import_path=github.com/tmuxpack/tpack
+go_package="${go_import_path}/cmd/tpack"
+go_ldflags="-X main.version=${version}"
+hostmakedepends="go"
+depends="tmux git bash"
+checkdepends="$depends"
+short_desc="tmux-plugin-manager with a TUI"
+maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
+license="MIT"
+homepage="https://github.com/tmuxpack/tpack/"
+distfiles="https://github.com/tmuxpack/tpack/archive/refs/tags/v${version}.tar.gz"
+checksum=d730b97b7f7c9dd70310bba6fa7ce9016e62624b16099612a468e13ba7853976
+
+post_install() {
+    vlicense LICENSE.md
+}
